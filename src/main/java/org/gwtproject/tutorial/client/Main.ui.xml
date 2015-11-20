@@ -12,26 +12,46 @@
 	</ui:style>
 
 	<g:HTMLPanel>
-		<p:PaperIconItem ui:field="menuClearAll">
-			<i:IronIcon icon="delete" />
-			<div>Clear All</div>
-			<p:PaperRipple />
-		</p:PaperIconItem>
-		<p:PaperIconItem ui:field="menuClearDone">
-			<i:IronIcon icon="clear" />
-			<div>Clear Done</div>
-			<p:PaperRipple />
-		</p:PaperIconItem>
-		<p:PaperIconItem ui:field="menuSettings">
-			<i:IronIcon icon="settings" />
-			<div>Settings</div>
-			<p:PaperRipple />
-		</p:PaperIconItem>
-		<p:PaperIconItem ui:field="menuAbout">
-			<i:IronIcon icon="help" />
-			<div>About</div>
-			<p:PaperRipple />
-		</p:PaperIconItem>
+		<p:PaperDrawerPanel ui:field="drawerPanel">
+			<div drawer="">
+				<p:PaperHeaderPanel mode="seamed">
+					<p:PaperToolbar />
+					<p:PaperIconItem ui:field="menuClearAll">
+						<i:IronIcon icon="delete" />
+						<div>Clear All</div>
+						<p:PaperRipple />
+					</p:PaperIconItem>
+					<p:PaperIconItem ui:field="menuClearDone">
+						<i:IronIcon icon="clear" />
+						<div>Clear Done</div>
+						<p:PaperRipple />
+					</p:PaperIconItem>
+					<p:PaperIconItem ui:field="menuSettings">
+						<i:IronIcon icon="settings" />
+						<div>Settings</div>
+						<p:PaperRipple />
+					</p:PaperIconItem>
+					<p:PaperIconItem ui:field="menuAbout">
+						<i:IronIcon icon="help" />
+						<div>About</div>
+						<p:PaperRipple />
+					</p:PaperIconItem>
+				</p:PaperHeaderPanel>
+			</div>
+			<div main="">
+				<p:PaperHeaderPanel mode="seamed">
+					<p:PaperToolbar>
+						<p:PaperIconButton ui:field="menu" icon="more-vert"
+							attributes="paper-drawer-toggle" />
+						<span>Todo List</span>
+					</p:PaperToolbar>
+
+					<g:HTMLPanel ui:field="content"
+						addStyleNames="vertical center-justified layout" />
+
+				</p:PaperHeaderPanel>
+			</div>
+		</p:PaperDrawerPanel>
 	</g:HTMLPanel>
 
 </ui:UiBinder>
