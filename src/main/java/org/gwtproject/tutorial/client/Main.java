@@ -17,20 +17,42 @@ public class Main extends Composite {
 	}
 
 	private static MainUiBinder ourUiBinder = GWT.create(MainUiBinder.class);
-	
-	@UiField PaperDrawerPanel drawerPanel;
-	@UiField HTMLPanel content;
 
-	@UiField PaperDialog addItemDialog;
-	@UiField PaperInput titleInput;
-	@UiField PaperTextarea descriptionInput;
+	@UiField
+	PaperDrawerPanel drawerPanel;
+	@UiField
+	HTMLPanel content;
+
+	@UiField
+	PaperDialog addItemDialog;
+	@UiField
+	PaperInput titleInput;
+	@UiField
+	PaperTextarea descriptionInput;
 
 	public Main() {
 		initWidget(ourUiBinder.createAndBindUi(this));
 	}
-	
+
 	@UiHandler("addButton")
 	protected void onAddButtonClick(ClickEvent e) {
-	  addItemDialog.open();
+		addItemDialog.open();
+	}
+
+	@UiHandler("confirmAddButton")
+	protected void onConfirmAddButtonClick(ClickEvent e) {
+		if (!titleInput.getValue().isEmpty()) {
+			addItem(titleInput.getValue(), descriptionInput.getValue());
+			// clear text fields
+			titleInput.setValue("");
+			descriptionInput.setValue("");
+		}
+	}
+
+	private void addItem(String title, String description) {
+		Item item = new Item();
+		item.setTitle(title);
+		item.setDescription(description);
+		content.add(item);
 	}
 }
