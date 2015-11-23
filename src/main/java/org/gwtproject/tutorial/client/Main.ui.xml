@@ -26,6 +26,14 @@
 	</ui:style>
 
 	<g:HTMLPanel>
+		<style is='custom-style'>
+			.add {
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			--paper-fab-background: var(--paper-red-500);
+			}
+		</style>
 		<p:PaperDrawerPanel ui:field="drawerPanel">
 			<div drawer="">
 				<p:PaperHeaderPanel mode="seamed">
@@ -63,6 +71,8 @@
 					<g:HTMLPanel ui:field="content"
 						addStyleNames="{style.content} vertical center-justified layout" />
 				</p:PaperHeaderPanel>
+				<p:PaperFab ui:field="addButton" icon="add"
+					addStyleNames="add" />
 			</div>
 		</p:PaperDrawerPanel>
 	</g:HTMLPanel>
