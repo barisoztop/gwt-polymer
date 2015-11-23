@@ -37,7 +37,7 @@
 		<p:PaperDrawerPanel ui:field="drawerPanel">
 			<div drawer="">
 				<p:PaperHeaderPanel mode="seamed">
-					<p:PaperToolbar />
+					<p:PaperToolbar addStyleNames="{style.toolbar}" />
 					<p:PaperIconItem ui:field="menuClearAll">
 						<i:IronIcon icon="delete" />
 						<div>Clear All</div>
