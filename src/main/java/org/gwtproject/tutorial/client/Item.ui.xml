@@ -7,7 +7,6 @@
 	<ui:style>
 	@external .done;
 	.item {
-		padding-left: 20px;
 		font-size: 150%;
 		font-weight: normal;
 	}
@@ -17,7 +16,6 @@
 	}
 	
 	.title {
-		padding-left: 20px;
 		font-size: 150%;
 		font-weight: normal;
 	}
@@ -26,18 +24,20 @@
 		margin-top: 15px;
 		padding-left: 40px;
 	}
+	
+	.itemDrawer {
+		padding: 40px;
+	}
 	</ui:style>
 
 	<g:HTMLPanel addStyleNames="vertical center-justified layout {style.item}">
-		<style>
-		</style>
-		<div class="vertical-section">
+		<p:PaperMaterial addStyleNames="{style.itemDrawer}">
 			<h4>
 				<p:PaperCheckbox ui:field="done"></p:PaperCheckbox>
 				<span ui:field="title" class='{style.title}'></span>
 			</h4>
 			<div ui:field="description" class='{style.description}'></div>
-		</div>
+		</p:PaperMaterial>
 	</g:HTMLPanel>
 
 </ui:UiBinder>
